@@ -13,5 +13,16 @@ namespace libdag
             this.Dag = dag;
         }
 
+		public void Run()
+		{
+			foreach (var node in Dag.Values)
+			{
+				if (node.IsRoot)
+				{
+					node.OnStart();
+				}
+			}
+		}
+
     }
 }
